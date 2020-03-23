@@ -1,0 +1,17 @@
+ipywidgets
+
+https://www.youtube.com/watch?v=wxVx54ax47s
+
+-daca definesti un element interactiv si il atribui unei variabile, pui var.widget si iti va afisa widget-ul
+-f.widget
+
+https://www.youtube.com/watch?v=i40d8-Hu4vM
+
+-Python object handles logic and data and it has traits that can send event when changed
+-Widgets offer graphics and interaction
+-they are both linked together
+
+Laborator 3
+-disabling continous updates:
+https://ipywidgets.readthedocs.io/en/stable/examples/Using%20Interact.html#Disabling-continuous-updates
+-
