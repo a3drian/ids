@@ -33,6 +33,8 @@ Date:
 -Semeion
 -SpamBase
 -Wine
+.datele trebuie scalate pentru ca sunt intre ordinul zecilor si ordinul miilor
+.y nu trebuie scalat pentru ca reprezinta clasa de care apartine exemplul de antrenare (training example)
 
 Date:
 -fara missing: Wine
@@ -55,3 +57,7 @@ pt algoritmi:
 Notes:
 -best_params_ devine valabil dupa ce faci un fit si o predictie
 -return_train_score=True avem nevoie de el cand vrem sa punem intr-un pd data frame cv_results_
+
+TO DOs:
+-4 algorithms
+-sa fac un pipeline
