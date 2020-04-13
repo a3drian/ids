@@ -1,0 +1,57 @@
+Lab6 IDS
+
+-trebuie sa gasim 4 set-uri de date
+-2 set-uri de date trebuie neaparat sa aibe valori lipsa
+
+1. pe un set de date cu valori lipsa trebuie sa bagam o metoda de missing value inputation
+-metoda trebuie sa fie justificata si documentata
+-fill, nu aruncam coloanele sau liniile
+
+2. pentru toate cele 4 set-uri de date trebuie sa aplicam 5 metode de clasificare
+-metodele de clasificare le alegem din .pdf (sunt 8)
+-pentru fiecare metoda raportam acuratete, scorul F1 cu 5-fold cross validation
+-folosim hiperparametri pentru metode alese de noi
+-trebuie sa afisam mediile rezultatelor pentru rularile pe setul de antrenare si pentru rularile pe setul de testare
+
+3. documentam in limba romana fiecare din cele 5 metode de clasificare, eventual intr-o sectiune separata din notebook
+
+4. rulam din nou cele 5 metode de clasificare cu 5-fold cross validation si raportam performanta
+-pentru fiecare fold din cele 5 cautam parametri optimi prin 4-fold validation si raportam performanta ca media celor 5 rulari
+
+-trebuie sa alegem 5 metode de clasificare
+-trebuie sa alegem 4 seturi de date, 2 si 2
+-partea de documentatie putem sa o facem separat
+
+Luate:
+-KNN
+-Decision tree
+-Random forest
+-Multi-layer perceptron
+-SVM
+
+Date:
+-Semeion
+-SpamBase
+-Wine
+
+Date:
+-fara missing: Wine
+
+TO KNOW:
+-scalarea datelor si de ce am facut-o
+-skip_header ce face
+-train_test_split(), eventual si parametrul "test_size", "random_state"
+-fit()
+-predict()
+-cum se calculeaza accuracy din metrics
+-cross_val_score(), eventual si parametrul scoring cu "average", "weighted", "f1_macro"
+-ce e aia mean()
+-ce fac parametrii lui GridSearchCV
+
+pt algoritmi:
+-ce face n_neighbours in KNN
+-
+
+Notes:
+-best_params_ devine valabil dupa ce faci un fit si o predictie
+-return_train_score=True avem nevoie de el cand vrem sa punem intr-un pd data frame cv_results_
