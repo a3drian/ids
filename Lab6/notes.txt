@@ -55,9 +55,32 @@ pt algoritmi:
 -
 
 Notes:
--best_params_ devine valabil dupa ce faci un fit si o predictie
+-best_params_ devine valabil dupa ce faci un fit
 -return_train_score=True avem nevoie de el cand vrem sa punem intr-un pd data frame cv_results_
 
 TO DOs:
 -4 algorithms
 -sa fac un pipeline
+
+--------------------------------------------------------------------------------
+parameter_grid = {'n_neighbors': list(range(1, 10)), 'p': [1, 2, 3, 4.7]}
+
+grid_search_acc = GridSearchCV(estimator = KNeighborsClassifier(),
+                               param_grid = parameter_grid, 
+                               scoring = 'accuracy', 
+                               cv = 5,
+                               return_train_score = True)   
+
+scores_acc = cross_val_score(grid_search_acc, X, y, cv = cv_4)
+
+print('Accuracy:')
+
+print({scores_acc})
+print({scores_acc.mean()})
+
+grid_search_acc.fit(X_train, y_train)
+y_estimated_acc = grid_search_acc.predict(X_test)
+
+print(accuracy_score(y_test, y_estimated_acc)) 
+
+print(grid_search_acc.best_params_)
