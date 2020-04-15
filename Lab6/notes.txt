@@ -22,12 +22,12 @@ Lab6 IDS
 -trebuie sa alegem 4 seturi de date, 2 si 2
 -partea de documentatie putem sa o facem separat
 
-Luate:
+Luate:>
 -KNN
--Decision tree
--Random forest
 -Multi-layer perceptron
 -SVM
+-Decision tree
+-Random forest
 
 Date:
 -Semeion
@@ -51,36 +51,27 @@ TO KNOW:
 -ce fac parametrii lui GridSearchCV
 
 pt algoritmi:
--ce face n_neighbours in KNN
--
+KNN:
+-ce face n_neighbours
+DecisionTree
+-se calculeaza impuritatea Gini pentru a determina care feature sa folosim la radacina arborelui
+-feature care da cea mai mica impuritate e folosit la radacina
+-un nod nu se mai desparte daca are cea mai mica impuritate, nu mai are sens sa iei alta trasatura in considerare pentru ca trasatura respectiva nu ajuta la scadearea valorii impuritatii [13.05]
+-e o idee sa il lasi sa ruleze fara parametri si sa vezi daca face underfit sau overfit si apoi sa incerci sa modifici hiperparametrii, in special max_depth
+-parametrul min_samples_leaf e mereu luat in considerare indiferent de parametrul min_samples_split
+-min_samples_split controleaza situatia de overfit
+Random forest
+-o extensie a DecisionTree
+-mai versatil
+-out-of-bag-dataset = setul de date care nu a intrat in setul de date bootstrapped
+-putem folosi out-of-bag-dataset ca sa testam modelul si cate sample-uri sunt clasificate corect ne da acuratetea modelului
+-se incepe folosind radical(n) variabile (trasaturi) si se incearca apoi mai multe sau mai putine
 
 Notes:
 -best_params_ devine valabil dupa ce faci un fit
 -return_train_score=True avem nevoie de el cand vrem sa punem intr-un pd data frame cv_results_
+-daca y contine clasa din care face parte modelul, cum e la iris, nu cred ca trebuie scalare pe y
 
 TO DOs:
 -4 algorithms
--sa fac un pipeline
-
---------------------------------------------------------------------------------
-parameter_grid = {'n_neighbors': list(range(1, 10)), 'p': [1, 2, 3, 4.7]}
-
-grid_search_acc = GridSearchCV(estimator = KNeighborsClassifier(),
-                               param_grid = parameter_grid, 
-                               scoring = 'accuracy', 
-                               cv = 5,
-                               return_train_score = True)   
-
-scores_acc = cross_val_score(grid_search_acc, X, y, cv = cv_4)
-
-print('Accuracy:')
-
-print({scores_acc})
-print({scores_acc.mean()})
-
-grid_search_acc.fit(X_train, y_train)
-y_estimated_acc = grid_search_acc.predict(X_test)
-
-print(accuracy_score(y_test, y_estimated_acc)) 
-
-print(grid_search_acc.best_params_)
+-sa fac un pipeline [X]
