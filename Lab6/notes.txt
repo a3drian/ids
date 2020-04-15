@@ -53,6 +53,9 @@ TO KNOW:
 pt algoritmi:
 KNN:
 -ce face n_neighbours
+SVC
+-ce face kernel in SVC
+-ce face constant kernel as C in SVC
 DecisionTree
 -se calculeaza impuritatea Gini pentru a determina care feature sa folosim la radacina arborelui
 -feature care da cea mai mica impuritate e folosit la radacina
@@ -71,7 +74,9 @@ Notes:
 -best_params_ devine valabil dupa ce faci un fit
 -return_train_score=True avem nevoie de el cand vrem sa punem intr-un pd data frame cv_results_
 -daca y contine clasa din care face parte modelul, cum e la iris, nu cred ca trebuie scalare pe y
+-apare problema cu n_splits=5 daca avem o singura clasa in setul de antrenare/testare si nu are cum sa faca stratified fold cand are nevoie de 5 exemple si tu ii dai numai 1 sau <5
 
 TO DOs:
--4 algorithms
+-documentation [ ]
+-5 algorithms [X]
 -sa fac un pipeline [X]
