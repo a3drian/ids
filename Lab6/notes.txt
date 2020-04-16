@@ -75,8 +75,19 @@ Notes:
 -return_train_score=True avem nevoie de el cand vrem sa punem intr-un pd data frame cv_results_
 -daca y contine clasa din care face parte modelul, cum e la iris, nu cred ca trebuie scalare pe y
 -apare problema cu n_splits=5 daca avem o singura clasa in setul de antrenare/testare si nu are cum sa faca stratified fold cand are nevoie de 5 exemple si tu ii dai numai 1 sau <5
+-de ce a trebuit la Semeion sa fac un argmax pe y_Semeion (?)
+-nu mergea o adresa relativa ca puneam \ in loc de / (wtf)
 
 TO DOs:
 -documentation [ ]
 -5 algorithms [X]
 -sa fac un pipeline [X]
+
+Date:
+-load
+-(missing value imp)
+-interpret
+-(scale)
+-split 
+-augment
+-run
